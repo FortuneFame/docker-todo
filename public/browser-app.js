@@ -10,6 +10,7 @@ const showTasks = async () => {
     const {
       data: { tasks },
     } = await axios.get("/api/v1/tasks");
+     console.log(tasks);
     if (tasks.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">Пусто. Нема назач.</h5>';
       loadingDOM.style.visibility = "hidden";
@@ -17,7 +18,7 @@ const showTasks = async () => {
     }
     const allTasks = tasks
       .map((task) => {
-        const { completed, id: taskID, name } = task;
+        const { completed, id: taskID, name_tasks: name } = task;
         return `<div class="single-task ${completed && "task-completed"}">
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
@@ -71,7 +72,7 @@ formDOM.addEventListener("submit", async (e) => {
   const name = taskInputDOM.value;
 
   try {
-    await axios.post("/api/v1/tasks", { name });
+    await axios.post("/api/v1/tasks", { name_tasks: name });
     showTasks();
     taskInputDOM.value = "";
     formAlertDOM.style.display = "block";

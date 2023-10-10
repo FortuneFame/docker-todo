@@ -444,3 +444,42 @@ form > :last-child {
   text-align: center;
   margin-top: 1rem;
 }
+
+/* --------------------- ERROR PAGE ---------------------- */
+
+.error-content{
+      width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-content h1 {
+    color: #e74c3c;
+    font-size: 4rem;
+}
+
+.error-content p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.return-home-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.return-home-btn:hover {
+    color: #fff;
+    background-color: #555;
+}
